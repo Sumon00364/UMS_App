@@ -37,6 +37,6 @@ namespace UMS_App.Repository
         public DbSet<Designation> Designations { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Student> Students { get; set; }
-        public DbSet<CourseAssign> CourseAssigns { get; set; }
+        //public DbSet<CourseAssign> CourseAssigns { get; set; }
     }
 }
