@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -20,6 +21,8 @@ namespace UMS_App.Repository
             return new ApplicationDbContext();
         }
 
-
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Semester> Semesters { get; set; }
+        public DbSet<Course> Courses { get; set; }
     }
 }
