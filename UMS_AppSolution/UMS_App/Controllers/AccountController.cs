@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using UMS_App.Models;
+using UMS_App.Repository;
 
 namespace UMS_App.Controllers
 {
