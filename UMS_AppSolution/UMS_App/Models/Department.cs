@@ -7,6 +7,16 @@ using System.Web;
 
 namespace UMS_App.Models
 {
+    /// <summary>
+    /// ===============================================================================
+    /// *******************************************************************************
+    /// ----- Author Name : Md. Sumon Miah.
+    /// ----- Writen Date : 16-05-2017
+    /// ----- Description : Create a department models where user will enter department
+    ///                     name and department code
+    /// *******************************************************************************
+    /// ===============================================================================
+    /// </summary>
     public class Department
     {
         [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
