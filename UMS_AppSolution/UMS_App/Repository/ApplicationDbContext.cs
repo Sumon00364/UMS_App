@@ -8,6 +8,16 @@ using UMS_App.Models;
 
 namespace UMS_App.Repository
 {
+    /// <summary>
+    /// ==============================================================================
+    /// ******************************************************************************
+    /// ----- Author Name : Md. Sumon Miah.
+    /// ----- Writen Date : 16-05-2017 to final presentation day.
+    /// ----- Description : ApplicationDbContext class ia a database connection class.
+    ///                     Hare all DbSet list are database table representator.
+    /// ******************************************************************************
+    /// ==============================================================================
+    /// </summary>
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()

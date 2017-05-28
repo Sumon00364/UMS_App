@@ -7,6 +7,16 @@ using System.Web;
 
 namespace UMS_App.Models
 {
+    /// <summary>
+    /// ==============================================================================
+    /// ******************************************************************************
+    /// ----- Author Name : Md. Sumon Miah.
+    /// ----- Writen Date : 18-05-2017
+    /// ----- Description : Create teacher model and uer will enter teacter 
+    ///                     information and save it in database.
+    /// ******************************************************************************
+    /// ==============================================================================
+    /// </summary>
     public class Teacher
     {
         [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

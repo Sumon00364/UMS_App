@@ -7,6 +7,17 @@ using System.Web;
 
 namespace UMS_App.Models
 {
+    /// <summary>
+    /// =============================================================================
+    /// *****************************************************************************
+    /// ----- Author Name : Md. Sumon Miah.
+    /// ----- Writen Date : 18-05-2017.
+    /// ----- Description : Create a designation model where store the teacher 
+    ///                     designation.
+    /// *****************************************************************************
+    /// =============================================================================
+    /// 
+    /// </summary>
     public class Designation
     {
         [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
