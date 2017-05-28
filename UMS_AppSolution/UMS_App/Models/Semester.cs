@@ -7,6 +7,16 @@ using System.Web;
 
 namespace UMS_App.Models
 {
+    /// <summary>
+    /// ==============================================================================
+    /// ******************************************************************************
+    /// ----- Author Name : Md. Sumon Miah.
+    /// ----- Writen Date : 17-05-2017.
+    /// ----- Description : Create semester model for database table purpose. And its 
+    ///                     has no UI for entering semester name.
+    /// *******************************************************************************
+    /// ===============================================================================
+    /// </summary>
     public class Semester
     {
         [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,6 +28,6 @@ namespace UMS_App.Models
         [DataType(DataType.Text)]
         [Display(Name = "Semester Name")]
         public string SemesterName { get; set; }
-       // public virtual ICollection<Course> Courses { get; set; } 
+        public virtual ICollection<Course> Courses { get; set; } 
     }
 }
