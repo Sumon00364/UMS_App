@@ -19,6 +19,7 @@ namespace UMS_App.Models
     /// </summary>
     public class Department
     {
+       
         [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
@@ -39,6 +40,7 @@ namespace UMS_App.Models
         public virtual ICollection<Course> Courses { get; set; }
         public virtual ICollection<Teacher> Teachers { get; set; }
         public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<ClassRoomAllocate> ClassRoomAllocates { get; set; } 
 
     }
 }
