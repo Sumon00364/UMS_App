@@ -62,5 +62,6 @@ namespace UMS_App.Models
         public int SemesterId { get; set; }
         [ForeignKey("SemesterId")]
         public virtual Semester Semester { get; set; }
+        public virtual ICollection<ClassRoomAllocate> ClassRoomAllocates { get; set; }
     }
 }

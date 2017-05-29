@@ -19,7 +19,7 @@ namespace UMS_App.Models
     /// </summary>
     public class Department
     {
-       
+
         [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 

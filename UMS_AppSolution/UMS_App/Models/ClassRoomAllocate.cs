@@ -27,17 +27,17 @@ namespace UMS_App.Models
         [Required(ErrorMessage = "The department name is require!")]
         [Display(Name = "Department")]
         public int DepartmentId { get; set; }
+        [ForeignKey("DepartmentId")]
+        public virtual Department Department { get; set; }
 
-
-
-
+        
         [Required(ErrorMessage = "The course name is require!")]
         [Display(Name = "Course")]
         public int CourseId { get; set; }
+        [ForeignKey("CourseId")]
+        public virtual Course Course { get; set; }
 
-
-
-
+        
         [Required(ErrorMessage = "The room number is require!")]
         [Display(Name = "Room No.")]
         public int RoomId { get; set; }
