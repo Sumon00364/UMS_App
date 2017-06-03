@@ -40,16 +40,5 @@ namespace UMS_App.Repository
         public DbSet<Student> Students { get; set; }
         public DbSet<ClassRoomAllocate> ClassRoomAllocates { get; set; }
         public DbSet<Room> Rooms { get; set; }
-        public DbSet<Day> Days { get; set; }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Course>()
-                .HasRequired(d => d.Department)
-                .WithMany(w => w.Courses)
-                .HasForeignKey(d => d.DepartmentId)
-                .WillCascadeOnDelete(false);
-
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }

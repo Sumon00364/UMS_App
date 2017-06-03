@@ -7,13 +7,13 @@ namespace UMS_App.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class CreateClassRoomAllocateRoomAndDayAgain : IMigrationMetadata
+    public sealed partial class CreateClassRoomAllocate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateClassRoomAllocateRoomAndDayAgain));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateClassRoomAllocate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705290140136_CreateClassRoomAllocateRoomAndDayAgain"; }
+            get { return "201706031748548_CreateClassRoomAllocate"; }
         }
         
         string IMigrationMetadata.Source

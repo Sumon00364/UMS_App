@@ -47,10 +47,8 @@ namespace UMS_App.Models
 
         [Required(ErrorMessage = "The day is require!")]
         [Display(Name = "Day")]
-        public int DayId { get; set; }
-        [ForeignKey("DayId")]
-        public virtual Day Day { get; set; }
-
+        public Day DayId { get; set; }
+      
 
         [Required(ErrorMessage = "The start time is require!")]
         [DataType(DataType.Time)]
@@ -62,5 +60,16 @@ namespace UMS_App.Models
         [DataType(DataType.Time)]
         [Display(Name = "To")]
         public TimeSpan ToTime { get; set; }
+    }
+
+    public enum Day
+    {
+        SaturDay,
+        SunDay,
+        MonDay,
+        TuesDay,
+        Wednesday,
+        ThursDay,
+        Friday
     }
 }
