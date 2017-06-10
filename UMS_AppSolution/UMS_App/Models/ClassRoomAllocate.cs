@@ -23,13 +23,6 @@ namespace UMS_App.Models
         [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-
-        [Required(ErrorMessage = "The department name is require!")]
-        [Display(Name = "Department")]
-        public int DepartmentId { get; set; }
-        [ForeignKey("DepartmentId")]
-        public virtual Department Department { get; set; }
-
         
         [Required(ErrorMessage = "The course name is require!")]
         [Display(Name = "Course")]

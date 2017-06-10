@@ -28,6 +28,8 @@ namespace UMS_App.Models
         [DataType(DataType.Text)]
         [Display(Name = "Semester Name")]
         public string SemesterName { get; set; }
+
+
         public virtual ICollection<Course> Courses { get; set; } 
     }
 }

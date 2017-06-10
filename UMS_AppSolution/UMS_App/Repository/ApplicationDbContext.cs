@@ -37,6 +37,11 @@ namespace UMS_App.Repository
         public DbSet<Course> Courses { get; set; }
         public DbSet<Designation> Designations { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+
+        // NO NEED TO CREATE A TABLE FOR COURSE ASSIGN
+        //public DbSet<CourseAssign> CourseAssignes { get; set; }
+        
+
         public DbSet<Student> Students { get; set; }
         public DbSet<ClassRoomAllocate> ClassRoomAllocates { get; set; }
         public DbSet<Room> Rooms { get; set; }

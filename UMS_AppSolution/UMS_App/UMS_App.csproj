@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +40,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -107,12 +114,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -164,27 +165,42 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705281519239_FirstMigration.cs" />
-    <Compile Include="Migrations\201705281519239_FirstMigration.Designer.cs">
-      <DependentUpon>201705281519239_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201706100658438_DepartmentAndCourse.cs" />
+    <Compile Include="Migrations\201706100658438_DepartmentAndCourse.Designer.cs">
+      <DependentUpon>201706100658438_DepartmentAndCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705281531400_TeacherandDesignation_Migration.cs" />
-    <Compile Include="Migrations\201705281531400_TeacherandDesignation_Migration.Designer.cs">
-      <DependentUpon>201705281531400_TeacherandDesignation_Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201706100700089_Courses.cs" />
+    <Compile Include="Migrations\201706100700089_Courses.Designer.cs">
+      <DependentUpon>201706100700089_Courses.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705281728005_CreateStudentTable.cs" />
-    <Compile Include="Migrations\201705281728005_CreateStudentTable.Designer.cs">
-      <DependentUpon>201705281728005_CreateStudentTable.cs</DependentUpon>
+    <Compile Include="Migrations\201706100702055_Semester.cs" />
+    <Compile Include="Migrations\201706100702055_Semester.Designer.cs">
+      <DependentUpon>201706100702055_Semester.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706031748548_CreateClassRoomAllocate.cs" />
-    <Compile Include="Migrations\201706031748548_CreateClassRoomAllocate.Designer.cs">
-      <DependentUpon>201706031748548_CreateClassRoomAllocate.cs</DependentUpon>
+    <Compile Include="Migrations\201706100705374_DesignationAndTeacher.cs" />
+    <Compile Include="Migrations\201706100705374_DesignationAndTeacher.Designer.cs">
+      <DependentUpon>201706100705374_DesignationAndTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706100728233_TeacherEmailUniqueAndCourseLimit.cs" />
+    <Compile Include="Migrations\201706100728233_TeacherEmailUniqueAndCourseLimit.Designer.cs">
+      <DependentUpon>201706100728233_TeacherEmailUniqueAndCourseLimit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706100758557_CourseAssign.cs" />
+    <Compile Include="Migrations\201706100758557_CourseAssign.Designer.cs">
+      <DependentUpon>201706100758557_CourseAssign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706100804384_Studnent.cs" />
+    <Compile Include="Migrations\201706100804384_Studnent.Designer.cs">
+      <DependentUpon>201706100804384_Studnent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706100820561_ClassRoomAllocate.cs" />
+    <Compile Include="Migrations\201706100820561_ClassRoomAllocate.Designer.cs">
+      <DependentUpon>201706100820561_ClassRoomAllocate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClassRoomAllocate.cs" />
     <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\CourseAssign.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Designation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -197,6 +213,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\UMS.mdf" />
+    <Content Include="App_Data\UMS_log.ldf">
+      <DependentUpon>UMS.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -248,9 +268,7 @@
     <Content Include="Views\Department\Edit.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -259,17 +277,29 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705281519239_FirstMigration.resx">
-      <DependentUpon>201705281519239_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706100658438_DepartmentAndCourse.resx">
+      <DependentUpon>201706100658438_DepartmentAndCourse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705281531400_TeacherandDesignation_Migration.resx">
-      <DependentUpon>201705281531400_TeacherandDesignation_Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706100700089_Courses.resx">
+      <DependentUpon>201706100700089_Courses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705281728005_CreateStudentTable.resx">
-      <DependentUpon>201705281728005_CreateStudentTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706100702055_Semester.resx">
+      <DependentUpon>201706100702055_Semester.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706031748548_CreateClassRoomAllocate.resx">
-      <DependentUpon>201706031748548_CreateClassRoomAllocate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706100705374_DesignationAndTeacher.resx">
+      <DependentUpon>201706100705374_DesignationAndTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706100728233_TeacherEmailUniqueAndCourseLimit.resx">
+      <DependentUpon>201706100728233_TeacherEmailUniqueAndCourseLimit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706100758557_CourseAssign.resx">
+      <DependentUpon>201706100758557_CourseAssign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706100804384_Studnent.resx">
+      <DependentUpon>201706100804384_Studnent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706100820561_ClassRoomAllocate.resx">
+      <DependentUpon>201706100820561_ClassRoomAllocate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
