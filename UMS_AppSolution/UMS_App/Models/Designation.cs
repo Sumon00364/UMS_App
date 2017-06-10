@@ -31,5 +31,6 @@ namespace UMS_App.Models
         public string DesignationName { get; set; }
 
         public virtual ICollection<Teacher> Teachers { get; set; }
+
     }
 }

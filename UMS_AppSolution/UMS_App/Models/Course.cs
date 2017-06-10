@@ -62,6 +62,13 @@ namespace UMS_App.Models
         public int SemesterId { get; set; }
         [ForeignKey("SemesterId")]
         public virtual Semester Semester { get; set; }
+
+        // A teacher may not be assigned to a course so
+        // it can be null
+        public int? TeacherId { get; set; }
+        [ForeignKey("TeacherId")]
+        public virtual Teacher Teacher { get; set; }
+
         public virtual ICollection<ClassRoomAllocate> ClassRoomAllocates { get; set; }
     }
 }
